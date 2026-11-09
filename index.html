@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Incidencias v1.0.0</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Registro de Incidencias</h1>
+        
+        <form id="incidenciaForm">
+            <label for="titulo">Título de la incidencia:</label>
+            <input type="text" id="titulo" required placeholder="Ej: Falla en el login">
+            
+            <label for="descripcion">Descripción:</label>
+            <textarea id="descripcion" required placeholder="Detalla el problema..."></textarea>
+            
+            <button type="submit">Registrar Incidencia</button>
+        </form>
+
+        <h2>Incidencias Registradas</h2>
+        <ul id="listaIncidencias"></ul>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
