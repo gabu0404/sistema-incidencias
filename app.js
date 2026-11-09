@@ -11,3 +11,13 @@ formulario.addEventListener('submit', function(e) {
     formulario.reset();
     renderizarLista();
 });
+
+function renderizarLista() {
+    lista.innerHTML = '';
+    incidencias.forEach(inc => {
+        const li = document.createElement('li');
+        li.className = 'incidencia-item';
+        li.innerHTML = `<strong>${inc.titulo}</strong> <br> ${inc.descripcion} <br> <em>Estado: ${inc.estado}</em>`;
+        lista.appendChild(li);
+    });
+}
