@@ -5,8 +5,15 @@ let incidencias = [];
 
 formulario.addEventListener('submit', function(e) {
     e.preventDefault();
-    const titulo = document.getElementById('titulo').value;
-    const descripcion = document.getElementById('descripcion').value;
+    const titulo = document.getElementById('titulo').value.trim();
+    const descripcion = document.getElementById('descripcion').value.trim();
+    
+    // Corrección v1.1.1: Evitar campos vacíos
+    if (titulo === '' || descripcion === '') {
+        alert('Por favor, completa todos los campos. No se permiten solo espacios vacíos.');
+        return;
+    }
+
     const nuevaIncidencia = { id: Date.now(), titulo: titulo, descripcion: descripcion, estado: 'Pendiente' };
     incidencias.push(nuevaIncidencia);
     formulario.reset();
